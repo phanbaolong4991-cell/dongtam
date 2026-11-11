@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đồng Tâm D&T Coffee - Chung Tay Lan Tỏa Giá Trị Cà Phê</title>
+    <link rel="stylesheet" href="style_2.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Logo" style="height: 30px; vertical-align: middle; margin-right: 8px;">ĐỒNG TÂM D&T
+            </a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html" class="active">Trang Chủ</a>
+                <a href="ve-chung-toi.html">Giới Thiệu</a>
+                <a href="san-pham.html">Sản Phẩm</a>
+                <a href="lien-he.html">Liên Hệ</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Chung Tay Lan Tỏa<br>Giá Trị Cà Phê</h1>
+            <p>Cà phê Bảo Lộc nguyên chất, rang mộc, giữ trọn vẹn hương vị tự nhiên từ núi rừng Tây Nguyên.</p>
+            <a href="san-pham.html" class="btn">Khám Phá Sản Phẩm</a>
+        </div>
+    </section>
+
+    <!-- FEATURES BAR -->
+    <section class="features">
+        <div class="features-grid">
+            <div class="feature-item">
+                <h3>Hạt Bảo Lộc</h3>
+                <p>100% nguyên chất</p>
+            </div>
+            <div class="feature-item">
+                <h3>Rang Mộc</h3>
+                <p>Giữ trọn hương vị</p>
+            </div>
+            <div class="feature-item">
+                <h3>Xưởng SX</h3>
+                <p>Trực tiếp sản xuất</p>
+            </div>
+            <div class="feature-item">
+                <h3>Giá Tốt</h3>
+                <p>Ưu đãi cho đại lý</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED PRODUCTS -->
+    <section class="products-section">
+        <h2 class="section-title">Sản Phẩm Nổi Bật</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1559525839-b184a4d698c7?q=80&w=600&auto=format&fit=crop" alt="Cà phê hạt">
+                <h3>Cà Phê Hạt Rang Mộc</h3>
+                <div class="product-price">180.000đ / kg</div>
+                <a href="san-pham.html" class="btn btn-outline">Xem Chi Tiết</a>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=600&auto=format&fit=crop" alt="Cà phê xay">
+                <h3>Cà Phê Xay Nguyên Chất</h3>
+                <div class="product-price">170.000đ / kg</div>
+                <a href="san-pham.html" class="btn btn-outline">Xem Chi Tiết</a>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1611162458324-aae1eb4129a4?q=80&w=600&auto=format&fit=crop" alt="Cà phê phin">
+                <h3>Combo Cà Phê Phin</h3>
+                <div class="product-price">250.000đ</div>
+                <a href="san-pham.html" class="btn btn-outline">Xem Chi Tiết</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>ĐỒNG TÂM D&T COFFEE</h3>
+                <p>Chung tay lan tỏa giá trị cà phê Việt.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Liên Hệ</h3>
+                <p>📍 64 Đào Duy Từ, P.1, Bảo Lộc</p>
+                <p>📞 0338 851 369</p>
+                <p>✉️ phanbaolong4991@gmail.com</p>
+            </div>
+            <div class="footer-col">
+                <h3>Giờ Mở Cửa</h3>
+                <p>Thứ 2 - Chủ Nhật</p>
+                <p>06:00 - 17:00</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Đồng Tâm D&T Coffee. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("navLinks").classList.toggle("active");
+        }
+    </script>
+</body>
+</html>

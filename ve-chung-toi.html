@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới Thiệu - Đồng Tâm D&T Coffee</title>
+    <link rel="stylesheet" href="style_2.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Logo" style="height: 30px; vertical-align: middle; margin-right: 8px;">ĐỒNG TÂM D&T
+            </a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html">Trang Chủ</a>
+                <a href="ve-chung-toi.html" class="active">Giới Thiệu</a>
+                <a href="san-pham.html">Sản Phẩm</a>
+                <a href="lien-he.html">Liên Hệ</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <h1>Về Chúng Tôi</h1>
+    </div>
+
+    <section class="about-content">
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&auto=format&fit=crop" alt="Xưởng rang cà phê">
+        <div class="about-text">
+            <h2>Câu Chuyện Thương Hiệu</h2>
+            <p>Đồng Tâm D&T Coffee ra đời tại mảnh đất Bảo Lộc mộng mơ, nơi được mệnh danh là "thủ phủ" của cà phê Việt Nam. Chúng tôi bắt đầu từ một xưởng rang nhỏ, với khát vọng mang hương vị cà phê nguyên bản nhất đến với mọi người.</p>
+            <p>Với phương châm <strong>"Chung Tay Lan Tỏa Giá Trị Cà Phê"</strong>, chúng tôi không ngừng cải tiến quy trình sản xuất, hỗ trợ các đại lý và nông dân địa phương cùng phát triển.</p>
+        </div>
+    </section>
+
+    <section class="products-section" style="background-color: #f4f4f4;">
+        <h2 class="section-title">Quy Trình Rang Mộc</h2>
+        <div class="product-grid">
+            <div class="product-card" style="padding: 20px;">
+                <h3 style="color: var(--gold);">1. Tuyển Chọn</h3>
+                <p>Chọn lọc những hạt cà phê chín mọng nhất từ những vườn cà phê uy tín tại Bảo Lộc.</p>
+            </div>
+            <div class="product-card" style="padding: 20px;">
+                <h3 style="color: var(--gold);">2. Rang Mộc</h3>
+                <p>Rang mộc ở nhiệt độ chuẩn, không tẩm ướp bất kỳ hương liệu hóa học nào.</p>
+            </div>
+            <div class="product-card" style="padding: 20px;">
+                <h3 style="color: var(--gold);">3. Bảo Quản</h3>
+                <p>Đóng gói kỹ lưỡng trong túi van một chiều để giữ trọn hương vị tươi mới.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>ĐỒNG TÂM D&T COFFEE</h3>
+                <p>Chung tay lan tỏa giá trị cà phê Việt.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Liên Hệ</h3>
+                <p>📍 64 Đào Duy Từ, P.1, Bảo Lộc</p>
+                <p>📞 0338 851 369</p>
+                <p>✉️ phanbaolong4991@gmail.com</p>
+            </div>
+            <div class="footer-col">
+                <h3>Giờ Mở Cửa</h3>
+                <p>Thứ 2 - Chủ Nhật</p>
+                <p>06:00 - 17:00</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Đồng Tâm D&T Coffee. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("navLinks").classList.toggle("active");
+        }
+    </script>
+</body>
+</html>
