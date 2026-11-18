@@ -1,1 +1,11 @@
+# Tên của Worker - PHẢI TRÙNG KHỚP với tên trên Cloudflare Dashboard
+name = "dongtam"
 
+# Ngày tương thích - Sử dụng ngày hiện tại để đảm bảo tính năng mới nhất
+compatibility_date = "2026-11-18"
+
+# Cấu hình cho Website tĩnh (Static Site)
+[assets]
+# Thư mục chứa các file website (index.html, css,...)
+# Vì các file của bạn đang nằm ngay ở ngoài cùng, chúng ta dùng dấu "." (nghĩa là thư mục gốc)
+directory = "."
