@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên Hệ - Đồng Tâm D&T Coffee</title>
+    <link rel="stylesheet" href="style_2.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Logo" style="height: 30px; vertical-align: middle; margin-right: 8px;">ĐỒNG TÂM D&T
+            </a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html">Trang Chủ</a>
+                <a href="ve-chung-toi.html">Giới Thiệu</a>
+                <a href="san-pham.html">Sản Phẩm</a>
+                <a href="lien-he.html" class="active">Liên Hệ</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <h1>Liên Hệ Với Chúng Tôi</h1>
+    </div>
+
+    <section class="contact-container">
+        <div class="contact-info">
+            <h2>Thông Tin Liên Hệ</h2>
+            <p><strong>Địa chỉ:</strong> 64 Đào Duy Từ, Phường 1, Bảo Lộc, Lâm Đồng</p>
+            <p><strong>Hotline:</strong> 0338 851 369</p>
+            <p><strong>Email:</strong> phanbaolong4991@gmail.com</p>
+            <p><strong>Giờ làm việc:</strong> 06:00 - 17:00 (Thứ 2 - Chủ Nhật)</p>
+            
+            <!-- Mã QR Google Maps -->
+            <div style="margin: 20px 0; display: flex; align-items: center; gap: 15px; background: #fff; padding: 15px; border-radius: 8px; border: 1px solid #ddd;">
+                <img src="qr-maps.png" alt="QR Google Maps" style="width: 90px; height: 90px; border: 1px solid #eee; padding: 2px;">
+                <div>
+                    <h4 style="margin-bottom: 5px; color: var(--green-deep);">Quét Mã Bản Đồ</h4>
+                    <p style="font-size: 0.85rem; color: #666; margin-bottom: 0;">Mở camera điện thoại để xem vị trí 64 Đào Duy Từ trên Google Maps.</p>
+                </div>
+            </div>
+
+            <!-- Bản đồ Google Maps -->
+            <div class="contact-info">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15607.707663007577!2d107.8002361!3d11.5439262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3173e7b5b0b0b0b1%3A0x0!2zQsOjbyBM4buZYywgTMOibSDEkOG7k25n!5e0!3m2!1svi!2s!4v1620000000000!5m2!1svi!2s" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <h2>Gửi Yêu Cầu Tư Vấn / Làm Đại Lý</h2>
+            <form action="#" method="POST">
+                <input type="text" name="name" placeholder="Họ và tên của bạn (*)" required>
+                <input type="tel" name="phone" placeholder="Số điện thoại (*)" required>
+                <input type="email" name="email" placeholder="Email (nếu có)">
+                <textarea name="message" rows="5" placeholder="Nội dung cần tư vấn (VD: Tôi muốn làm đại lý...)" required></textarea>
+                <button type="submit" class="btn">Gửi Yêu Cầu</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>ĐỒNG TÂM D&T COFFEE</h3>
+                <p>Chung tay lan tỏa giá trị cà phê Việt.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Liên Hệ</h3>
+                <p>📍 64 Đào Duy Từ, P.1, Bảo Lộc</p>
+                <p>📞 0338 851 369</p>
+                <p>✉️ phanbaolong4991@gmail.com</p>
+            </div>
+            <div class="footer-col">
+                <h3>Giờ Mở Cửa</h3>
+                <p>Thứ 2 - Chủ Nhật</p>
+                <p>06:00 - 17:00</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Đồng Tâm D&T Coffee. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("navLinks").classList.toggle("active");
+        }
+    </script>
+</body>
+</html>
