@@ -52,12 +52,18 @@
 
         <div class="contact-form">
             <h2>Gửi Yêu Cầu Tư Vấn / Làm Đại Lý</h2>
-            <form action="#" method="POST">
-                <input type="text" name="name" placeholder="Họ và tên của bạn (*)" required>
-                <input type="tel" name="phone" placeholder="Số điện thoại (*)" required>
-                <input type="email" name="email" placeholder="Email (nếu có)">
-                <textarea name="message" rows="5" placeholder="Nội dung cần tư vấn (VD: Tôi muốn làm đại lý...)" required></textarea>
+            <form id="contactForm">
+                <input type="text" name="name" placeholder="Họ và tên của bạn (*)" aria-label="Họ và tên" autocomplete="name" maxlength="100" required>
+                <input type="tel" name="phone" placeholder="Số điện thoại (*)" aria-label="Số điện thoại" autocomplete="tel" inputmode="tel" maxlength="20" required>
+                <input type="email" name="email" placeholder="Email (nếu có)" aria-label="Email" autocomplete="email" maxlength="120">
+                <textarea name="message" rows="5" placeholder="Nội dung cần tư vấn (VD: Tôi muốn làm đại lý...)" aria-label="Nội dung cần tư vấn" maxlength="2000" required></textarea>
+                <!-- Ô ẩn chống spam: người thật không nhìn thấy và không điền -->
+                <div class="hp-field" aria-hidden="true">
+                    <label>Để trống ô này <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+                </div>
                 <button type="submit" class="btn">Gửi Yêu Cầu</button>
+                <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+                <noscript><p class="form-status error">Vui lòng bật JavaScript để gửi yêu cầu, hoặc gọi hotline 0338 851 369.</p></noscript>
             </form>
         </div>
     </section>
@@ -90,5 +96,6 @@
             document.getElementById("navLinks").classList.toggle("active");
         }
     </script>
+    <script src="form.js"></script>
 </body>
 </html>
