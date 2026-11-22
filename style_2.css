@@ -311,6 +311,45 @@ header {
   border-color: var(--gold);
 }
 
+/* Ô ẩn chống spam (người thật không thấy) */
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.contact-form .btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Thông báo sau khi gửi form */
+.form-status {
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.form-status:empty {
+  display: none;
+}
+
+.form-status.info {
+  color: #555555;
+}
+
+.form-status.success {
+  color: #0b5d2a;
+  font-weight: 600;
+}
+
+.form-status.error {
+  color: #a12622;
+  font-weight: 600;
+}
+
 /* --- FOOTER --- */
 footer {
   background-color: var(--green-deep);
