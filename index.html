@@ -3,7 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đồng Tâm D&T Coffee - Chung Tay Lan Tỏa Giá Trị Cà Phê</title>
+    <title>Đồng Tâm D&amp;T Coffee - Chung Tay Lan Tỏa Giá Trị Cà Phê</title>
+    <meta name="description" content="Cà phê Bảo Lộc nguyên chất, rang mộc, giữ trọn vẹn hương vị tự nhiên từ núi rừng Tây Nguyên.">
+    <meta name="theme-color" content="#073b1d">
+    <link rel="canonical" href="https://dongtam.dtcafe.workers.dev/">
+    <link rel="icon" type="image/png" href="favicon-96.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="vi_VN">
+    <meta property="og:site_name" content="Đồng Tâm D&amp;T Coffee">
+    <meta property="og:title" content="Đồng Tâm D&amp;T Coffee - Chung Tay Lan Tỏa Giá Trị Cà Phê">
+    <meta property="og:description" content="Cà phê Bảo Lộc nguyên chất, rang mộc, giữ trọn vẹn hương vị tự nhiên từ núi rừng Tây Nguyên.">
+    <meta property="og:url" content="https://dongtam.dtcafe.workers.dev/">
+    <meta property="og:image" content="https://dongtam.dtcafe.workers.dev/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="style_2.css">
 </head>
 <body>
@@ -12,9 +27,9 @@
     <header>
         <div class="header-container">
             <a href="index.html" class="logo">
-                <img src="logo.png" alt="Logo" style="height: 30px; vertical-align: middle; margin-right: 8px;">ĐỒNG TÂM D&T
+                <img src="logo-header.webp" alt="" class="logo-img" width="48" height="48">ĐỒNG TÂM D&amp;T
             </a>
-            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Mở menu" aria-controls="navLinks" aria-expanded="false">☰</button>
             <nav class="nav-links" id="navLinks">
                 <a href="index.html" class="active">Trang Chủ</a>
                 <a href="ve-chung-toi.html">Giới Thiệu</a>
@@ -27,6 +42,7 @@
     <!-- HERO SECTION -->
     <section class="hero">
         <div class="hero-content">
+            <img src="logo-hero.webp" alt="Logo Đồng Tâm D&amp;T Coffee" class="hero-logo" width="400" height="400" fetchpriority="high">
             <h1>Chung Tay Lan Tỏa<br>Giá Trị Cà Phê</h1>
             <p>Cà phê Bảo Lộc nguyên chất, rang mộc, giữ trọn vẹn hương vị tự nhiên từ núi rừng Tây Nguyên.</p>
             <a href="san-pham.html" class="btn">Khám Phá Sản Phẩm</a>
@@ -84,7 +100,7 @@
     <footer>
         <div class="footer-container">
             <div class="footer-col">
-                <h3>ĐỒNG TÂM D&T COFFEE</h3>
+                <h3>ĐỒNG TÂM D&amp;T COFFEE</h3>
                 <p>Chung tay lan tỏa giá trị cà phê Việt.</p>
             </div>
             <div class="footer-col">
@@ -100,13 +116,15 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Đồng Tâm D&T Coffee. All rights reserved.</p>
+            <p>&copy; 2026 Đồng Tâm D&amp;T Coffee. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
         function toggleMenu() {
-            document.getElementById("navLinks").classList.toggle("active");
+            var nav = document.getElementById("navLinks");
+            var open = nav.classList.toggle("active");
+            document.querySelector(".mobile-menu-btn").setAttribute("aria-expanded", open ? "true" : "false");
         }
     </script>
 </body>
