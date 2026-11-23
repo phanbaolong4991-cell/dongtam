@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dongtam.dtcafe.workers.dev/sitemap.xml
