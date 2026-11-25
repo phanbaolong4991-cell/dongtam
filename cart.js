@@ -10,7 +10,7 @@
   // ---------- CẤU HÌNH (chỉ sửa ở đây) ----------
   var CONFIG = {
     // Số Zalo nhận đơn, viết liền không dấu cách. Ví dụ: '0338851369'
-    zaloPhone: '',
+    zaloPhone: '0338851369',
     // Số điện thoại hiển thị khi cần khách gọi trực tiếp
     hotline: '0338 851 369',
     storeName: 'Đồng Tâm D&T Coffee'
@@ -25,8 +25,17 @@
   }
 
   function parsePrice(text) {
-    var m = /([\d.]+)\s*đ/.exec(text || '');
-    return m ? parseInt(m[1].replace(/\./g, ''), 10) : NaN;
+    if (!text) return NaN;
+    var s = String(text).trim();
+    if (/^\d+$/.test(s)) {
+      return parseInt(s, 10);
+    }
+    var m = /([\d.]+)\s*đ/.exec(s);
+    if (m) {
+      return parseInt(m[1].replace(/\./g, ''), 10);
+    }
+    var digits = s.replace(/\D/g, '');
+    return digits ? parseInt(digits, 10) : NaN;
   }
 
   function isValidPhone(value) {
@@ -366,13 +375,28 @@
     if (!card) return;
     var nameEl = card.querySelector('h3');
     var priceEl = card.querySelector('.product-price');
-    var name = nameEl ? nameEl.textContent.trim() : '';
+    var variantSelect = card.querySelector('.product-variant');
+    var baseName = nameEl ? nameEl.textContent.trim() : '';
     var label = priceEl ? priceEl.textContent.trim() : '';
     var price = parsePrice(label);
-    var id = btn.dataset.id || name;
-    if (!name || !isFinite(price)) return;
-    addItem(id, name, price, label);
-    showToast('Đã thêm "' + name + '" vào giỏ hàng');
+    var baseId = btn.dataset.id || baseName;
+    var id = baseId;
+    var variantName = '';
+
+    if (variantSelect) {
+      var opt = variantSelect.options[variantSelect.selectedIndex];
+      if (opt) {
+        var optPrice = parsePrice(opt.dataset.price || opt.text);
+        if (isFinite(optPrice)) price = optPrice;
+        variantName = opt.text;
+        id = baseId + '-' + opt.value;
+      }
+    }
+
+    var fullName = variantName ? baseName + ' (' + variantName + ')' : baseName;
+    if (!baseName || !isFinite(price)) return;
+    addItem(id, fullName, price, label);
+    showToast('Đã thêm "' + fullName + '" vào giỏ hàng');
     cartBtn.classList.remove('bump');
     void cartBtn.offsetWidth;
     cartBtn.classList.add('bump');

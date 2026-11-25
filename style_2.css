@@ -783,6 +783,38 @@ body.cart-lock {
   cursor: pointer;
 }
 
+.product-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 12px 0;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.product-options label {
+  font-weight: 500;
+  color: var(--green-deep);
+}
+
+.product-variant {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  background: #fff;
+  color: var(--green-deep);
+  cursor: pointer;
+  outline: none;
+}
+
+.product-variant:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2px rgba(212, 160, 23, 0.2);
+}
+
 @media (max-width: 768px) {
   .cart-btn {
     order: 1;
