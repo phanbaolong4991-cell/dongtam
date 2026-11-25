@@ -3,7 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liên Hệ - Đồng Tâm D&T Coffee</title>
+    <title>Liên Hệ - Đồng Tâm D&amp;T Coffee</title>
+    <meta name="description" content="Liên hệ Đồng Tâm D&amp;T Coffee: 64 Đào Duy Từ, Phường 1, Bảo Lộc, Lâm Đồng. Hotline 0338 851 369. Gửi yêu cầu tư vấn hoặc làm đại lý.">
+    <meta name="theme-color" content="#073b1d">
+    <link rel="canonical" href="https://dongtam.dtcafe.workers.dev/lien-he">
+    <link rel="icon" type="image/png" href="favicon-96.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="vi_VN">
+    <meta property="og:site_name" content="Đồng Tâm D&amp;T Coffee">
+    <meta property="og:title" content="Liên Hệ - Đồng Tâm D&amp;T Coffee">
+    <meta property="og:description" content="Liên hệ Đồng Tâm D&amp;T Coffee: 64 Đào Duy Từ, Phường 1, Bảo Lộc, Lâm Đồng. Hotline 0338 851 369. Gửi yêu cầu tư vấn hoặc làm đại lý.">
+    <meta property="og:url" content="https://dongtam.dtcafe.workers.dev/lien-he">
+    <meta property="og:image" content="https://dongtam.dtcafe.workers.dev/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="style_2.css">
 </head>
 <body>
@@ -11,9 +26,9 @@
     <header>
         <div class="header-container">
             <a href="index.html" class="logo">
-                <img src="logo-header.webp" alt="" class="logo-img" width="48" height="48">ĐỒNG TÂM D&T
+                <img src="logo-header.webp" alt="" class="logo-img" width="48" height="48">ĐỒNG TÂM D&amp;T
             </a>
-            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Mở menu" aria-controls="navLinks" aria-expanded="false">☰</button>
             <nav class="nav-links" id="navLinks">
                 <a href="index.html">Trang Chủ</a>
                 <a href="ve-chung-toi.html">Giới Thiệu</a>
@@ -72,7 +87,7 @@
     <footer>
         <div class="footer-container">
             <div class="footer-col">
-                <h3>ĐỒNG TÂM D&T COFFEE</h3>
+                <h3>ĐỒNG TÂM D&amp;T COFFEE</h3>
                 <p>Chung tay lan tỏa giá trị cà phê Việt.</p>
             </div>
             <div class="footer-col">
@@ -88,15 +103,17 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Đồng Tâm D&T Coffee. All rights reserved.</p>
+            <p>&copy; 2026 Đồng Tâm D&amp;T Coffee. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
         function toggleMenu() {
-            document.getElementById("navLinks").classList.toggle("active");
+            var nav = document.getElementById("navLinks");
+            var open = nav.classList.toggle("active");
+            document.querySelector(".mobile-menu-btn").setAttribute("aria-expanded", open ? "true" : "false");
         }
     </script>
     <script src="form.js"></script>
 </body>
-</html>
+</html>
