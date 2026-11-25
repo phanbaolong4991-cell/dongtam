@@ -13,7 +13,9 @@
     zaloPhone: '0338851369',
     // Số điện thoại hiển thị khi cần khách gọi trực tiếp
     hotline: '0338 851 369',
-    storeName: 'Đồng Tâm D&T Coffee'
+    storeName: 'Đồng Tâm D&T Coffee',
+    // Google Apps Script Web App URL để lưu đơn hàng vào Google Sheets và gửi Email
+    scriptUrl: 'https://script.google.com/macros/s/AKfycbyk-E6cIVqMfF6A0bu1lKSHbFTK6NR53EgfcpiVWR_3qaniXMVclkEiSQADG2r71Bpu/exec'
   };
 
   var STORAGE_KEY = 'dt_cart_v1';
@@ -480,6 +482,17 @@
     var text = buildOrderText(data);
     orderBox.value = text;
 
+    // 1. Gửi ngầm thông tin đơn hàng vào Google Sheets / Email qua Apps Script (không làm gián đoạn Zalo)
+    if (CONFIG.scriptUrl && /^https:\/\/script\.google\.com\/macros\/s\/[^\/]+\/exec$/.test(CONFIG.scriptUrl)) {
+      var formData = new URLSearchParams();
+      formData.append('name', data.name);
+      formData.append('phone', data.phone);
+      formData.append('address', data.address);
+      formData.append('message', '[ĐƠN HÀNG TỪ GIỎ HÀNG]\n' + text);
+      formData.append('page', 'gio-hang');
+      fetch(CONFIG.scriptUrl, { method: 'POST', body: formData }).catch(function () {});
+    }
+
     // Mở Zalo ngay trong lúc khách bấm nút (để trình duyệt không chặn cửa sổ mới)
     var zaloUrl = CONFIG.zaloPhone
       ? 'https://zalo.me/' + CONFIG.zaloPhone.replace(/\D/g, '')
@@ -489,13 +502,13 @@
     copyText(text).then(function () {
       orderBox.hidden = true;
       if (zaloUrl) {
-        setMsg('success', 'Đã sao chép đơn hàng. Zalo đang mở: hãy dán (Ctrl+V, hoặc nhấn giữ rồi chọn Dán) vào khung chat và bấm gửi.');
+        setMsg('success', 'Đã lưu đơn vào hệ thống & sao chép. Zalo đang mở: hãy dán (Ctrl+V, hoặc nhấn giữ rồi chọn Dán) vào khung chat và bấm gửi.');
       } else {
-        setMsg('success', 'Đã sao chép đơn hàng. Vui lòng gửi cho cửa hàng, hoặc gọi ' + CONFIG.hotline + '.');
+        setMsg('success', 'Đã lưu đơn vào hệ thống & sao chép. Vui lòng gửi cho cửa hàng, hoặc gọi ' + CONFIG.hotline + '.');
       }
     }).catch(function () {
       orderBox.hidden = false;
-      setMsg('info', 'Chưa tự sao chép được. Vui lòng chọn và sao chép nội dung đơn hàng bên dưới, rồi gửi cho cửa hàng.');
+      setMsg('info', 'Đã lưu đơn. Chưa tự sao chép được. Vui lòng chọn và sao chép nội dung đơn hàng bên dưới, rồi gửi cho cửa hàng.');
     });
   });
 
